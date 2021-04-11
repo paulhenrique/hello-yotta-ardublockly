@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Jr || Hello Yotta </title>
+    <link rel="stylesheet" href="materialize/materialize.css" media="screen,projection">
+    <link href="css/material-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bounce.css">
+    <script src="js/pace.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="purple white-text atividade-content">
+    <div class="container-fluid header mt-2">
+        <div class="row">
+            <div class="col">
+                <a href="atividades.html" class="btn-large btn-floating purple"><i
+                        class="material-icons">keyboard_backspace</i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid">
+        <div class="container center">
+            <div id="app">
+                <div class="card grey-text text-darken-3 pt-2 pb-2">
+                    <div class="row" id="row_atividade">
+                        <div class="col s12 m6">
+                            <video id="video_component" controls>
+                                <source id="source_component" :src="introducaoVideo(atividade.introduction_video)"
+                                    type="video/webm">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="col m6 left-align">
+                            <h4>{{atividade.title}}</h4>
+                            <p>{{atividade.extense_title}}</p>
+                            <div>
+                                <i class="material-icons orange-text">star</i>
+                                <i class="material-icons">star</i>
+                                <i class="material-icons">star</i>
+                                <i class="material-icons">star</i>
+                                <i class="material-icons">star</i>
+                            </div>
+                            <p>{{atividade.short_description}}</p>
+                            <a class="btn btn-large right" :href="`ide.html?id=${atividade._id}`">
+                                <i class="material-icons left">play_arrow</i>
+                                Começar Fase
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m12">
+                        <div class="card p-1  grey-text text-darken-3" v-if="autenticate">
+                            <div class="card-content left-align">
+                                <h1 class="card-title left-align">
+                                    <i class="material-icons left">
+                                        edit
+                                    </i>
+                                    <strong>Descrição da Atividade</strong>
+                                </h1>
+                                <p class="description_atividade" v-for="description in atividade.description">
+                                    {{description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m5">
+                            <div class="card  grey-text text-darken-3" v-if="autenticate">
+                                <div class="card-content left-align">
+                                    <h1 class="card-title left-align">
+                                        <i class="material-icons left">
+                                            track_changes
+                                        </i><strong>Objetivos de Aprendizagem</strong>
+                                    </h1>
+                                    <p v-for="description in atividade.objective" class="description_atividade">
+                                        {{description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col m7">
+                            <div class="card  grey-text text-darken-3" v-if="autenticate">
+                                <div class="card-content left-align">
+                                    <h1 class="card-title left-align"><i
+                                            class="material-icons left">handyman</i><strong>Materiais</strong></h1>
+                                    <div class="row">
+                                        <div class="col m6">
+                                            <ul class="collection">
+                                                <li class="collection-item grey lighten-2">
+                                                    <strong>Componentes e Softwares</strong>
+                                                </li>
+                                                <span v-if="atividade.materiais">
+                                                    <li class="collection-item"
+                                                        v-for="(content) in atividade.materiais.componentes">
+                                                        <span>{{content}}</span>
+                                                    </li>
+                                                </span>
+
+                                            </ul>
+                                        </div>
+                                        <div class="col m6">
+                                            <ul class="collection">
+                                                <li class="collection-item grey lighten-2">
+                                                    <strong>Materiais para construção</strong>
+                                                </li>
+                                                <span v-if="atividade.materiais">
+                                                    <li class="collection-item"
+                                                        v-for="content in atividade.materiais.montagem">
+                                                        <span v-if="typeof content === 'object'">
+                                                            <a :href="content.link" target="_blank">{{content.text}}</a>
+                                                        </span>
+                                                        <span v-else>
+                                                            {{content}}
+                                                        </span>
+                                                    </li>
+                                                </span>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m6">
+                        <div class="card  grey-text text-darken-3" v-if="autenticate">
+                            <div class="card-content left-align">
+                                <h1 class="card-title left-align">
+                                    <i class="material-icons left">
+                                        sticky_note_2
+                                    </i><strong>Habilidades da BNCC</strong>
+                                </h1>
+                                <ul class="collapsible" data-collapsible="accordion">
+                                    <li v-for="(habilidade, indice) in atividade.habilidades_bncc">
+                                        <div class="collapsible-header"><i
+                                                class="material-icons">filter_drama</i>{{habilidade.title}}
+                                        </div>
+                                        <div class="collapsible-body">
+                                            <p><strong>{{habilidade.extense_title}}</strong></p>
+                                            <p>{{habilidade.description}}</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m6">
+                        <div class="card  grey-text text-darken-3" v-if="autenticate">
+                            <div class="card-content left-align">
+                                <h1 class="card-title left-align"><i class="material-icons left">
+                                        emoji_objects
+                                    </i><strong>Habilidades do Pensamento
+                                        Computacional</strong></h1>
+                                <ul class="collapsible" data-collapsible="accordion">
+                                    <li v-for="(habilidade, indice) in atividade.habilidades_pc">
+                                        <div class="collapsible-header"><i
+                                                class="material-icons">filter_drama</i>{{habilidade.title}}
+                                        </div>
+                                        <div class="collapsible-body">
+                                            <p>{{habilidade.description}}</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col m12">
+                        <div class="card  grey-text text-darken-3" v-if="autenticate">
+                            <div class="card-content left-align">
+                                <h1 class="card-title left-align"><i
+                                        class="material-icons left">handyman</i><strong>Cenário/Ambiente da
+                                        Atividade</strong></h1>
+                                <p class="description_atividade" v-for="content in atividade.cenario_ambiente">
+                                    {{content}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m12">
+                        <div class="card  grey-text text-darken-3" v-if="autenticate">
+                            <div class="card-content left-align">
+                                <h1 class="card-title left-align"><i
+                                        class="material-icons left">handyman</i><strong>Passo a passo da
+                                        Execução</strong></h1>
+                                <div class="row">
+
+                                    <div class="col m12">
+                                        <ul class="collapsible" data-collapsible="expandable">
+                                            <li>
+
+                                                <div class="collapsible-header active"><i
+                                                        class="material-icons">filter_drama</i>Vídeo de Introdução
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <div class="row">
+                                                        <div class="col m8 offset-m2">
+                                                            <center>
+                                                                <img class="" src="img/testImage.png"
+                                                                    style="max-width: 100%; margin-top:1rem; " alt="Imagem do Vídeo de Introdução">
+                                                            </center>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li v-for="(content, indice) in atividade.steps">
+                                                <div class="collapsible-header"><i
+                                                        class="material-icons">filter_drama</i>{{`Etapa
+                                                    ${indice+1}`}}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <div class="row">
+                                                        <div class="col" :class="(content.img.length > 1)? 'm6' : ''">
+                                                            <p><strong>{{content.text}}</strong></p>
+                                                        </div>
+                                                        <div v-if="content.img.length > 1" class="col m6">
+                                                            <img class="responsive-img" :src="'img/' + content.img"
+                                                                :alt="content.title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                atividade: {}
+            },
+            computed: {
+                id_atividade: function () {
+                    const queryString = window.location.search;
+                    const urlParams = new URLSearchParams(queryString);
+                    const product = urlParams.get('id')
+                    return product;
+                },
+                autenticate: function () {
+                    return localStorage.getItem('token') ? true : false;
+                }
+            },
+            methods: {
+                introducaoVideo: function (address) {
+                    return location.origin + address;
+                }
+            },
+            mounted() {
+                axios.get('atividades/exemplo_atividades.json').then(data => {
+                    data.data.forEach(element => {
+                        if (element._id == this.id_atividade) {
+                            this.atividade = element;
+                        }
+                    });
+                }).then(() => {
+                    document.querySelector('#video_component').load();
+                    $('.modal-trigger').leanModal();
+                });
+            }
+        })
+    </script>
+    <!-- jQuery and Materialize JS -->
+    <script src="js_libs/jquery-2.1.3.min.js"></script>
+    <script src="materialize/materialize.js"></script>
+</body>
+
+</html>

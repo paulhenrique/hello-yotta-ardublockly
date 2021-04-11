@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Jr || Hello Yotta </title>
+    <link rel="stylesheet" href="materialize/materialize.css" media="screen,projection">
+    <link href="css/material-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bounce.css">
+    <script src="js/pace.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="purple white-text">
+    <div class="container-fluid header mt-2">
+        <div class="row">
+            <div class="col">
+                <a href="index.html" class="btn-large btn-floating purple"><i
+                        class="material-icons">keyboard_backspace</i></a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="container">
+            <div id="app">
+                <h3>Escolha uma fase para prosseguir</h3>
+                <p>Ao escolher uma fase você poderá descobrir como a realizar</p>
+                <div class="row">
+                    <div class="col s6 m4" v-for="(atividade, indice) in atividades">
+                        <div class="card grey-text atividade text-darken-3" :class="(indice == 0)? 'ativa' : ''">
+                            <div class="card-image">
+                                <img :src="atividade.cover">
+                                <span class="card-title">{{atividade.title}}</span>
+                            </div>
+                            <div class="card-content grey-text text-darken-1">
+                                <p class="text-left">{{atividade.short_description}}</p>
+                            </div>
+                            <div class="card-action center">
+                                <i class="material-icons orange-text">star</i>
+                                <i class="material-icons">star</i>
+                                <i class="material-icons">star</i>
+                                <i class="material-icons">star</i>
+                                <i class="material-icons">star</i>
+                            </div>
+                            <div class="card-action center">
+                                <a class="btn" :href="nextAddress(atividade._id)">Começar Fase</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                atividades: []
+            },
+            mounted() {
+                axios.get('atividades/exemplo_atividades.json').then(data => {
+                    this.atividades = data.data;
+                });
+                console.log(localStorage.getItem('token'));
+            },
+            methods: {
+                nextAddress: function (id_atividade) {
+                    const queryString = window.location.search;
+                    const urlParams = new URLSearchParams(queryString);
+                    const code = urlParams.get('code');
+                    var nextAdd = '';
+                    if (code) {
+                        nextAdd = `atividade.html?id=${id_atividade}&code=${code}`;
+                    } else {
+                        nextAdd = `atividade.html?id=${id_atividade}`;
+                    }
+                    return nextAdd;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

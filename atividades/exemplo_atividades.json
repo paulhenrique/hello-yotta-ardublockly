@@ -1,0 +1,140 @@
+[
+    {
+        "_id": "fase_1",
+        "title": "Fase 1",
+        "extense_title": "Conhecendo o ambiente",
+        "cover": "https://exame.com/wp-content/uploads/2017/03/2017-03-01t184059z_1464666150_rc152fa29950_rtrmadp_3_telecoms-mobileworld.jpg",
+        "short_description": "Você conhece filmes como “Wall-E”, ‘Big Hero’ e ‘BB-8’ que retratam um robô? Existem robôs que têm aparência humana e são chamados de Humanóides, como o Baymax do filme Big Hero. Caso algum dos filmes citados seja novidade,  veja os trailers da playlist que criamos para você.",
+        "objective": [
+            "Estimular a criança a criar um auto retrato, ao customizar um desenho com o avatar de um robô, sendo o avatar disponível em papel sulfite.",
+            "Desenvolver um programa  de computador na plataforma Hello2Code para fazer o led piscar por um segundo."
+        ],
+        "description": [
+            "O Baymax tem mãos, braços, pernas, ou seja, ele parece com um ser humano, por isso ele é considerado um robô humanóide. Faça perguntas para os seus alunos incentivando a imaginação sobre este assunto, por exemplo: Já pensou como você seria se fosse um robô? Como seria a sua voz? Você teria garras?",
+            "Essa atividade busca incentivar a criança a se auto-retratar como se fosse um robô humanóide. Incentive algumas características chaves para este auto retrato, com perguntas como: O que você teria como um robô? Uma antena? Vários leds? Conduza a prática para que todos os alunos pensem em ter uma antena com um led como característica, pois esse elemento estará nos personagens de exemplo fornecidos nos materiais XXXXXXXX"
+        ],
+        "cenario_ambiente": [
+            "A atividade precisa ser desenvolvida em um laboratório de informática ou em um ambiente que possua um computador por aluno. Imprima várias cópias do material Folha molde do Robô Humanóide V1.pdf e deixe cada aluno escolher o molde que mais gostar.",
+            "A ideia é deixar um aluno por computador, utilizando um kit XXXXXX e o Hello2Code. Apesar das crianças realizarem a atividade individualmente em relação aos materiais, incentive os alunos a resolverem a atividade de forma colaborativa. Apesar da recomendação dessa atividade ser executada neste formato, sinta-se à vontade para adaptá-la"
+        ],
+        "descricao_professor": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe maxime commodi fugiat magnam ea dolore excepturi qui rem quae officiis placeat, corporis exercitationem adipisci assumenda reprehenderit omnis iusto expedita?",
+        "introduction_video": "/ardublockly/img/movie/atividade_01.webm",
+        "teacher_additional_video": "/movie/atividade_01.mp4",
+        "estimated_time": "",
+        "complete_code": "",
+        "habilidades_bncc": [
+            {
+                "title": "Arte > EF15AR06",
+                "extense_title": "Arte > Artes Visuais > Processos de Criação > (EF15AR06)",
+                "description": "Dialogar sobre a sua criação e as dos colegas, para alcançar sentidos plurais."
+            },
+            {
+                "title": "Arte > EF15AR04",
+                "extense_title": "Arte > Artes Visuais > Materialidades > (EF15AR04)",
+                "description": " Experimentar diferentes formas de expressão artística (desenho, pintura, colagem, quadrinhos, dobradura, escultura, modelagem, instalação, vídeo, fotografia etc.), fazendo uso sustentável de materiais, instrumentos, recursos e técnicas convencionais e não convencionais."
+            },
+            {
+                "title": "Arte > EF15AR26",
+                "extense_title": "Arte > Artes integradas > Arte e tecnologia > (EF15AR26)",
+                "description": " Explorar diferentes tecnologias e recursos digitais (multimeios, animações, jogos eletrônicos, gravações em áudio e vídeo, fotografia, softwares etc.) nos processos de criação artística."
+            },
+            {
+                "title": "Matemática > EF01MA09",
+                "extense_title": "Matemática > Álgebra > Padrões Figurais e Numéricos > (EF01MA09)",
+                "description": " Organizar e ordenar objetos familiares ou representações por figuras, por meio de atributos, tais como cor, forma e medida. "
+            }
+        ],
+        "habilidades_pc": [
+            {
+                "title": "Algoritmos",
+                "description": "Um algoritmo é uma sequência de instruções ou um conjunto de regras para que algo seja feito. Um procedimento é um algoritmo (conjunto de processos) que pode ser replicado em diversos contextos."
+            },
+            {
+                "title": "Raciocínio Lógico",
+                "description": "A aplicação do raciocínio lógico atua no sentido de ser capaz de explicar por que algo é da maneira que é, assim como trabalhar porque algo não está como deveria ser."
+            }
+        ],
+        "steps": [
+            {
+                "text": "Inicie discussões com os alunos sobre o tema da atividade e forneça para eles cópias do Anexo XXXX. Forneça de 10 a 15 minutos para que eles finalizem o       desenho dos seus robôs;",
+                "img": ""
+            },
+            {
+                "text": "Peça para cada aluno acessar a aplicação do Hello2Code e acessar a atividade “Robô com Led”;",
+                "img": ""
+            },
+            {
+                "text": "Conecte o módulo de Led que o aluno escolheu em uma das saídas da central eletrônica. Clique em cima da saída do módulo de led e arraste até uma das saídas da central eletrônica, até formar uma linha que conecta as peças;",
+                "img": ""
+            },
+            {
+                "text": "Na tela de programação, clique e arraste com o mouse os bloquinhos de programação para o centro da tela. Encaixe os blocos para fazer o led acender por um segundo e apagar por um segundo;",
+                "img": "testImage2.png"
+            },
+            {
+                "text": "Ajude os alunos a realizarem um pequeno furo na folha onde está desenhado o robô, na região da antena. Neste furo, peça para os alunos encaixarem o led, forma que apareça o desenho do robô e o led na antena do mesmo;",
+                "img": ""
+            },
+            {
+                "text": "Clique no “Executar”, na tela de programação do Hello2Code, e veja como o led funciona. Incentive correções e alterações nos códigos, caso o led não pisque na primeira tentativa.",
+                "img": ""
+            }
+        ],
+        "materiais": {
+            "componentes": [
+                "LED",
+                "Central eletrônica",
+                "Cabo USB",
+                "Cabo RJ11",
+                "Arduino IDE",
+                "Hello2Code"
+            ],
+            "montagem": [
+                {
+                    "text": "Imprimir Robô Humanóide V1.pdf ",
+                    "link": "https://bit.ly/3rENK91"
+                },
+                "Tesoura",
+                "Cola",
+                "Régua",
+                "giz ou lápis de cor"
+            ]
+        }
+    },
+    {
+        "_id": "fase_2",
+        "title": "Fase22222",
+        "extense_title": "Conhecendo o ambiente",
+        "cover": "https://exame.com/wp-content/uploads/2017/03/2017-03-01t184059z_1464666150_rc152fa29950_rtrmadp_3_telecoms-mobileworld.jpg",
+        "short_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe maxime commodi fugiat magnam ea dolore excepturi qui rem quae officiis placeat, corporis exercitationem adipisci assumenda reprehenderit omnis iusto expedita?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe maxime commodi fugiat magnam ea dolore excepturi qui rem quae officiis placeat, corporis exercitationem adipisci assumenda reprehenderit omnis iusto expedita?",
+        "teacher_additional_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe maxime commodi fugiat magnam ea dolore excepturi qui rem quae officiis placeat, corporis exercitationem adipisci assumenda reprehenderit omnis iusto expedita?",
+        "introduction_video": "",
+        "teacher_additional_video": "",
+        "estimated_time": ""
+    },
+    {
+        "_id": "fase_3",
+        "title": "Fase 1",
+        "extense_title": "Conhecendo o ambiente",
+        "cover": "https://exame.com/wp-content/uploads/2017/03/2017-03-01t184059z_1464666150_rc152fa29950_rtrmadp_3_telecoms-mobileworld.jpg",
+        "short_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe maxime commodi fugiat magnam ea dolore excepturi qui rem quae officiis placeat, corporis exercitationem adipisci assumenda reprehenderit omnis iusto expedita?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe maxime commodi fugiat magnam ea dolore excepturi qui rem quae officiis placeat, corporis exercitationem adipisci assumenda reprehenderit omnis iusto expedita?",
+        "teacher_additional_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe maxime commodi fugiat magnam ea dolore excepturi qui rem quae officiis placeat, corporis exercitationem adipisci assumenda reprehenderit omnis iusto expedita?",
+        "introduction_video": "",
+        "teacher_additional_video": "",
+        "estimated_time": ""
+    },
+    {
+        "_id": "fase_3",
+        "title": "Fase 1",
+        "extense_title": "Conhecendo o ambiente",
+        "cover": "https://exame.com/wp-content/uploads/2017/03/2017-03-01t184059z_1464666150_rc152fa29950_rtrmadp_3_telecoms-mobileworld.jpg",
+        "short_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe maxime commodi fugiat magnam ea dolore excepturi qui rem quae officiis placeat, corporis exercitationem adipisci assumenda reprehenderit omnis iusto expedita?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe maxime commodi fugiat magnam ea dolore excepturi qui rem quae officiis placeat, corporis exercitationem adipisci assumenda reprehenderit omnis iusto expedita?",
+        "teacher_additional_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, saepe maxime commodi fugiat magnam ea dolore excepturi qui rem quae officiis placeat, corporis exercitationem adipisci assumenda reprehenderit omnis iusto expedita?",
+        "introduction_video": "",
+        "teacher_additional_video": "",
+        "estimated_time": ""
+    }
+]
